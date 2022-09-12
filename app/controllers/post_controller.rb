@@ -6,7 +6,7 @@ class PostController < ApplicationController
   end
 
   def create
-    @post = Post.new(user_id = params[:user_id])
+    @post = Post.new(post_params, user_id = params[:user_id])
   end
 
   def index

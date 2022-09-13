@@ -16,10 +16,6 @@ class PostController < ApplicationController
 
   private
 
-  def require_login
-
-  end
-
   def post_params
     params.require(:post).permit(:title, :body, :user, :user_id)
   end

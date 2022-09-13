@@ -1,3 +1,5 @@
+<h1>Create a post </h1>
+
 <%= form_with model: @post, url: "/posts", method: :post do |form|%>
   <%= form.label :title, "Title" %>
   <%= form.text_field :title, placeholder: "Please put interesting title here" %>

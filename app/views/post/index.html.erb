@@ -1,3 +1,8 @@
 <h2>Welcome to members only</h2>
 <p>Cool stuff coming soon</p>
 
+<% if user_signed_in? %>
+  <%= "Yep, signed in" =%>
+<% else %>
+  <%= "Nope, not signed in" =%>
+<% end %>

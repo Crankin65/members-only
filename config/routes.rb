@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'post#index'
+  root 'home#about'
   devise_for :users
   resources :posts, only: [:new, :create, :index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

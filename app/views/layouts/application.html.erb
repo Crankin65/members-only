@@ -62,6 +62,10 @@
 
   <body>
     <div style="margin: 30px" >
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>      
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>

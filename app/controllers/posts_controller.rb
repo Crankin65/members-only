@@ -6,7 +6,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.create(post_params)
+
+    if @post.save
+      @post.user.id = session[:user_id]
+      flash[:session] = "New Post created"
+      redirect to '/'
+    else
+      render 'new'
+    end
     #@post = Post.new(post_params, user_id = params[:user_id])
   end
 

@@ -7,6 +7,8 @@
   <%= form.label :body, "Body" %>
   <%= form.text_field :body %>
 
+  <%= form.hidden_field :user_id, value: @user.id %>
+
   <%= form.submit "Submit" %>
 <% end %>
 

@@ -3,15 +3,16 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @user = current_user
   end
 
   def create
     @post = Post.create(post_params)
 
     if @post.save
-      @post.user.id = session[:user_id]
+      #@post.user.id = session[:user_id]
       flash[:session] = "New Post created"
-      redirect to '/'
+      redirect_to '/'
     else
       render 'new'
     end
@@ -20,6 +21,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts.each do |post|
+      post.title
+      post.body
+      post.user_id
+    end
   end
 
   private

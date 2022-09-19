@@ -1,10 +1,9 @@
 <h2>Welcome to members only</h2>
-<p>Cool stuff coming soon</p>
 
 <% if user_signed_in? %>
-  <%= "Yep, signed in" %>
+  <%= "Below are the great posts you can see as a signed-in user" %>
 <% else %>
-  <%= "Nope, not signed in" %>
+  <%= "You're limited to what you can see because you're not signed in" %>
 <% end %>
 
-<%= @post %>
+<%= @posts %>

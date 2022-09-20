@@ -1,22 +1,32 @@
-<h2>Welcome to members only</h2>
-<<<<<<< HEAD
-<p>Cool stuff coming soon, welcome to the posts page</p>
-=======
->>>>>>> bacf7f6f1bf7d0a1268f839f9c2fd978f4968251
+<h2>Welcome to the posts page!</h2>
+<br>
+<p>Below are what's happening in the neighborhood</p>
 
 <% if user_signed_in? %>
   <%= "Below are the great posts you can see as a signed-in user" %>
 <% else %>
-  <%= "You're limited to what you can see because you're not signed in" %>
+  <%= "You're currently limited to what you can see because you're not signed in" %>
 <% end %>
 
-<<<<<<< HEAD
-<% Post.all.find_each do |post| %>
-  <%= post.title %>
-  <%= post.body %>
-  <%= post.created_at %>
-  <%= post.updated_at %>
-<% end %>
-=======
-<%= @posts %>
->>>>>>> bacf7f6f1bf7d0a1268f839f9c2fd978f4968251
+<br><br><br>
+
+<table class="table table-stripped table-hover table-sm">
+  <tr class="table-light">
+    <th scope="col" class="col-1">Post Title</th> 
+    <th scope="col" class="col-4">Post Body </th>    
+    <th scope="col" class="col-2">Post Creation</th>
+    <th scope="col" class="col-2">Post Updated</th>
+    <th scope="col" class="col-1">User</th>
+  </tr>
+
+  <% Post.all.find_each do |post| %>
+    <tr>
+      <th scope="row" class="col-1"><%= post.title %></th>    
+      <td class="col-4"><%= post.body %></td>
+      <td class="col-2"><%= post.created_at.to_date.to_fs(:long_ordinal) %></td>  
+      <td class="col-2"><%= post.updated_at.to_date.to_fs(:long_ordinal) %></td>   
+      <td class="col-2"><%= post.id %></td> 
+    </tr>
+  <% end %>
+
+ </table>

@@ -8,4 +8,10 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :posts
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name)
+  end
 end

@@ -3,8 +3,10 @@
 <p>A site where everyone can see but only members can create</p>
 
 <div>
-  <% if user_signed_in? %>
-    <p> Yep, you're logged in as <%= @user.first_name %> </p>
+  <% if current_user %>
+    <p> Yep, you're logged in as 
+    <% @user = User.find(current_user.id) %> 
+    <%= @user.first_name %></p>
   <% else %>
     <p> No, you are not logged in.</p>
   <% end%>

@@ -6,6 +6,17 @@
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Members-Only</a>
+        
+        <a class="navbar-brand" aria-current="page" >
+          <% if current_user %>
+          <p> You're logged in as
+              <% @user = User.find(current_user.id) %> 
+              <%= @user.first_name %>
+            <% else %>
+              <p>You are not logged in.</p>
+            <% end%>
+        </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -87,11 +98,8 @@
       <% if notice %>
         <%= render 'layouts/alerts' %>
       <% end %>      
-<<<<<<< HEAD
       <p class="alert"><%= alert %></p>
       <p class="notice"><%= notice %></p>
-=======
->>>>>>> bacf7f6f1bf7d0a1268f839f9c2fd978f4968251
       <%= yield %>
     </div>
   </body>

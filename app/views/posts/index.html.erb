@@ -1,5 +1,5 @@
 <h2>Welcome to members only</h2>
-<p>Cool stuff coming soon</p>
+<p>Cool stuff coming soon, welcome to the posts page</p>
 
 <% if user_signed_in? %>
   <%= "Yep, signed in" %>
@@ -7,4 +7,9 @@
   <%= "Nope, not signed in" %>
 <% end %>
 
-<%= Post.all %>
+<% Post.all.find_each do |post| %>
+  <%= post.title %>
+  <%= post.body %>
+  <%= post.created_at %>
+  <%= post.updated_at %>
+<% end %>

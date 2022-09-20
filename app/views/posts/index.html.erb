@@ -16,7 +16,9 @@
     <th scope="col" class="col-4">Post Body </th>    
     <th scope="col" class="col-2">Post Creation</th>
     <th scope="col" class="col-2">Post Updated</th>
-    <th scope="col" class="col-1">User</th>
+    <% if current_user %>
+      <th scope="col" class="col-1">User</th>
+    <% end %>
   </tr>
 
   <% Post.all.find_each do |post| %>
@@ -25,7 +27,12 @@
       <td class="col-4"><%= post.body %></td>
       <td class="col-2"><%= post.created_at.to_date.to_fs(:long_ordinal) %></td>  
       <td class="col-2"><%= post.updated_at.to_date.to_fs(:long_ordinal) %></td>   
-      <td class="col-2"><%= post.id %></td> 
+      <% if current_user %>
+        <td class="col-2">
+          <% @post_user = User.find(post.user_id) %>
+          <%= @post_user.first_name %>
+        </td> 
+      <% end %>
     </tr>
   <% end %>
 

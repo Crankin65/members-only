@@ -1,16 +1,20 @@
 <h1>Create a post </h1>
 
-<%= form_with model: @post, url: "/posts", method: :post do |form|%>
-  <%= form.label :title, "Title" %>
-  <%= form.text_field :title, placeholder: "Please put interesting title here" %>
+<div class="px-3">
+  <%= form_with model: @post, url: "/posts", method: :post do |form|%>
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title, placeholder: "Please put interesting title here" %>
 
-  <%= form.label :body, "Body" %>
-  <%= form.text_field :body %>
+    <br>
 
-  <%= form.hidden_field :user_id, value: @user.id %>
+    <%= form.label :body, "Body" %>
+    <%= form.text_field :body %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+    <%= form.hidden_field :user_id, value: @user.id %>
+
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>
 
 <% if @post.errors.any? %>
     <div id="error_explanation">

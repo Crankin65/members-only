@@ -73,7 +73,6 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
-    callsite (0.0.11)
     capybara (3.37.1)
       addressable
       matrix
@@ -117,10 +116,6 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
     matrix (0.4.2)
-    meta_request (0.3.0)
-      callsite
-      rack-contrib
-      railties
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.16.2)
@@ -142,14 +137,14 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-darwin)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
-    rack-contrib (2.3.0)
-      rack (~> 2.0)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.3.1)
@@ -232,6 +227,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-darwin-21
 
 DEPENDENCIES
   bootsnap
@@ -240,7 +236,6 @@ DEPENDENCIES
   devise
   importmap-rails
   jbuilder
-  meta_request
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   selenium-webdriver

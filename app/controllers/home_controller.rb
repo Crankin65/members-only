@@ -1,9 +1,5 @@
 class HomeController < ApplicationController
   def about
-    if user_signed_in?
-      @user = current_user
-    else
-      false
-    end
+  #  binding.pry
   end 
 end
